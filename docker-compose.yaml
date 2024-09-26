@@ -1,0 +1,69 @@
+version: '3.0'
+
+services:
+  app:
+    container_name: container_app_3
+    build:
+      context: .
+      dockerfile: .docker/app/Dockerfile
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    env_file:
+      - ./app/.env
+   
+
+  webserver:
+    container_name: container_webserver_3
+    build:
+      context: .
+      dockerfile: .docker/webserver/Dockerfile
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - "8082:80" 
+
+  db:
+    container_name: container_db_3
+    image: 'bitnami/postgresql:15.0.0'
+    volumes:
+      - 'db_data:/bitnami/postgresql'
+    environment:
+      POSTGRESQL_USERNAME: db_user
+      POSTGRESQL_PASSWORD: db_pass
+      POSTGRESQL_DATABASE: app
+  npm:
+    container_name: container_npm
+    image: node:latest
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    command: 'npm start'
+    # command: 'npx create-react-app my-app'
+    ports:
+      - "8084:3000"
+  cron:
+    container_name: container_cron_3
+    build:
+      context: .
+      dockerfile: .docker/app/Dockerfile.cron
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    env_file:
+      - ./app/.env
+  mail:
+    container_name: container_mail_3
+    image: eaudeweb/mailtrap
+    ports:
+      - "8090:80"
+    environment:
+      MT_USER: user
+      MT_PASSWD: password
+      MT_SIZE_LIMIT: 0
+
+
+volumes:
+  db_data:
+        

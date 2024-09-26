@@ -1,0 +1,4 @@
+# * * * * * echo data >> /tmp/cron.log
+* * * * * php artisan top:send-mail-command 3
+
+

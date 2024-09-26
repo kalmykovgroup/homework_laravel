@@ -1,0 +1,80 @@
+    1  sudo apt-get update
+    2  sudo apt-get install ca-certificates curl
+    3  sudo install -m 0755 -d /etc/apt/keyrings
+    4  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    5  sudo chmod a+r /etc/apt/keyrings/docker.asc
+    6  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    7    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    8  sudo apt-get update
+    9  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   10  sudo docker run hello-world
+   11  sudo apt update
+   12  sudo apt upgrade
+   13  sudo apt install gedit
+   14  docker run hello-world
+   15  docker run hello-world
+   16  sudo groupadd docker
+   17  sudo usermod -aG docker $USER
+   18  newgrp docker
+   19  git clone http://github.com/drandruShowProject/
+   20  git clone http://github.com/drandru/ShowProject/
+   21  sudo apt install ./code_1.91.0-1719861592_amd64.deb 
+   22  mv code_1.91.0-1719861592_amd64.deb ..
+   23  cd ..
+   24  sudo apt install ./code_1.91.0-1719861592_amd64.deb 
+   25  sudo apt-get install wget gpg
+   26  wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+   27  sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+   28  echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+   29  rm -f packages.microsoft.gpg
+   30  sudo apt install apt-transport-https
+   31  sudo apt update
+   32  sudo apt install code
+   33  cd Projects/ShowProject/
+   34  make build
+   35  sudo apt install make
+   36  make build
+   37  ssh-keygen
+   38  ssh-keygen --help
+   39  ssh-keygen -t rsa
+   40  ls .ssh/
+   41  cat .ssh/id_rsa.pub 
+   42  git
+   43  sudo apt install git
+   44  mkdir Projects
+   45  cd Projects/
+   46  git clone git@github.com:dr-andru/lesson_20240710.git
+   47  ls -la
+   48  rmdir Lesson_20240710
+   49  ls -la
+   50  cd lesson_20240710/
+   51  ls -la
+   52  docker ps
+   53  cd Projects/ShowProject/
+   54  make build
+   55  make start
+   56  make build
+   57  make start
+   58  make build
+   59  make start
+   60  ls 
+   61  ls -la app
+   62  ls -la 
+   63  touch app/index.php
+   64  sudo chown student:student app
+   65  ls -la 
+   66  mkdir app/public
+   67  nano app/public/index.php
+   68  cat app/public/index.php
+   69  git status
+   70  git checkout -b base
+   71  git status
+   72  git add .docker/ app/ docker-compose.yaml
+   73  git status
+   74  git commit . -m "base Base docker compose containers, app and webserver"
+   75  git config --global user.email "dr-andru@yandex.ru"
+   76  git config --global user.name "Smirnov A"
+   77  git commit . -m "base Base docker compose containers, app and webserver"
+   78  git push origin base
+   79  history | less
+   80  history > history.txt
