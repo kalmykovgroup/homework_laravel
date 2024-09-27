@@ -1,5 +1,4 @@
-# lesson_20240710# homework_laravel
-
+# Добавить новый пост
 
 localhost:8082/api/posts/create
 
@@ -10,6 +9,7 @@ localhost:8082/api/posts/create
 'mark' => 'required|integer'
 
 ----------------------------------------------------------------------------
+# Добавить новый комментарий
 
 localhost:8082/api/comments/create
 
