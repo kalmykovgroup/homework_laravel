@@ -54,11 +54,11 @@
             </a>
             <a href="" class="contact_link3">
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              
+
                 @if(auth()->user()?->name)
                   <span>Hello, {{ auth()->user()->name }}</span>
-                @endif 
-             
+                @endif
+
             </a>
           </div>
         </div>
@@ -66,7 +66,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{route("home")}}">
               <span>
                 Guarder
               </span>
@@ -76,26 +76,7 @@
             </button>
 
             <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href='{{ route("registration"); }}'>Registration</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service"> Services </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="guard"> Guards </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact">Contact us</a>
-                </li>
-              </ul>
+              <x-menu></x-menu>
             </div>
           </nav>
         </div>
@@ -110,12 +91,12 @@
           <div class="container">
                   @yield("content", "")
           </div>
-  </section>
+    </section>
 
-  
+
   </div>
 
- 
+
 
   <!-- footer section -->
   <footer class="container-fluid footer_section">
