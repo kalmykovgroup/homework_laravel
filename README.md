@@ -3,20 +3,20 @@
 
 localhost:8082/api/posts/create
 
-requared field text
+'text' => 'required|string|min:2|max:255', 
 
-requared field user_id
+'user_id' => 'required|integer', 
 
-requared field mark
+'mark' => 'required|integer'
 
 ----------------------------------------------------------------------------
 
 localhost:8082/api/comments/create
 
-requared field text
+'text' => 'required|string|min:2|max:255',
 
-requared field user_id
+'user_id' => 'required|integer',
 
-requared field post_id
+'post_id' => 'required|integer'
 
 # Для теста авторизация не требуется
