@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Resources;
 
-use App\Models\Comments;
+use App\Models\Comment;
 use Illuminate\Support\Facades\DB;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\Input;
@@ -18,7 +18,7 @@ class CommentsResource extends Resource
      *
      * @var string
      */
-    public static $model = Comments::class;
+    public static $model = Comment::class;
 
     /**
      * Get the fields displayed by the resource.

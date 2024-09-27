@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comments;
+use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class ApiCommentsController extends Controller
+class ApiCommentController extends Controller
 {
 
     public function create(Request $request)
@@ -24,7 +24,7 @@ class ApiCommentsController extends Controller
             return response()->json($validator->errors()->toJson(), 401);
         }
 
-        $comment = new Comments();
+        $comment = new Comment();
 
         $comment->text = $validator['email'];
         $comment->user_id = $validator['user_id'];

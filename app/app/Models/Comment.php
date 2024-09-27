@@ -8,7 +8,7 @@ use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
-class Comments  extends Model
+class Comment  extends Model
 {
     use HasFactory
         , AsSource
