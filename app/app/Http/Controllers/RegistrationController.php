@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
@@ -20,21 +21,26 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([ 
+        $validated = $request->validate([
             "name" => 'required|min:2|max:255',
             "email" => 'required|email',
-            'password' => 'required|min:5|max:255'
-        ]);  
+            'password' => 'required|min:5|max:255',
+            'password_confirmation' => 'required_with:password|same:password|min:5'
+        ]);
 
-        $user = new User();
 
-        $user->email = $validated['email'];
-        $user->name = $validated['name'];
-        $user->password = $validated['password'];
 
-        $user->save();
+            $user = new User();
 
-        return redirect()->route('login')->with('status', 'User created');
+            $user->email = $validated['email'];
+            $user->name = $validated['name'];
+            $user->password = $validated['password'];
+
+            $user->save();
+
+            return redirect()->route('login')->with('status', 'User created');
+
+
     }
 
 }

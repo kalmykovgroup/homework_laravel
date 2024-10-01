@@ -62,8 +62,6 @@ services:
       MT_USER: user
       MT_PASSWD: password
       MT_SIZE_LIMIT: 0
-
-
 volumes:
   db_data:
         

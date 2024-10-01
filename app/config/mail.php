@@ -14,8 +14,13 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'log'),
-
+    //'default' => env('MAIL_MAILER', 'log'),
+    'mailgun' => [
+        'transport' => 'mailgun',
+        // 'client' => [
+        //     'timeout' => 5,
+        // ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -107,6 +112,7 @@ return [
     | used globally for all emails that are sent by your application.
     |
     */
+
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
