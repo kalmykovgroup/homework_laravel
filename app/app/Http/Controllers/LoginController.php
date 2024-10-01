@@ -13,12 +13,11 @@ class LoginController extends Controller
 
     public function login(Request $request){
 
-
-
         $validated = $request->validate([
             "email" => 'required|email',
-            'password' => 'required|min:6|max:255'
+            'password' => 'required|min:5|max:255'
         ]);
+
 
         if(Auth::attempt($validated)){
             $request->session()->regenerate();
@@ -30,6 +29,21 @@ class LoginController extends Controller
             'email' => "Email or password incorrect."
         ])->onlyInput('email');
 
+    }
+
+    public function recover(){
+        return view('login.recover');
+    }
+
+    public function recover_password(Request $request){
+
+        $validated = $request->validate([
+            "email" => 'required|email',
+        ]);
+
+        if($validated){
+            return redirect()->route('login.recover')->with('status', 'Письмо с паролем, успешно отправленно на вашу почту!');
+        }
 
     }
 }
