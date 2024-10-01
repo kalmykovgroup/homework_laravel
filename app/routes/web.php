@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
@@ -25,6 +26,8 @@ Route::get('/recover_password', [LoginController::class, 'recover_password'])->n
 Route::post('/registration', [RegistrationController::class, 'store'])->name("registration.store");
 
 
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'post'])->name('feedback.post');
 
 
 Route::post('/login', [LoginController::class, 'login'])->name("login.login");

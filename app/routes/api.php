@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiCommentController;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiPostController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Router;
@@ -18,4 +19,8 @@ Route::middleware('auth:sanctum')->group(function (Router $request) {
 
 Route::post('posts/create', [ApiPostController::class, 'create'])->name('api.posts.create');
 Route::post('comments/create', [ApiCommentController::class, 'create'])->name('api.comments.create');
+
+Route::post('comments/create', [ApiCommentController::class, 'create'])->name('api.comments.create');
+
+
 
