@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-       
+
     <h2>Login</h2>
 
     @if(session('status'))
@@ -24,19 +24,19 @@
 
     <form method="POST" action="{{ route('login.login') }}">
         @csrf
-    <div class="form-group row"> 
+    <div class="form-group row">
         <div class="col-sm-10">
         <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email">
         </div>
     </div>
-    <div class="form-group row"> 
+    <div class="form-group row">
         <div class="col-sm-10">
         <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
         </div>
     </div>
 
     <button type="submit" class="btn btn-primary mb-2">Login</button>
+    <a href="{{ route('login.recover') }}" class="btn btn-primary mb-2">Recover password</a>
     </form>
-    
+
  @endsection
-  
