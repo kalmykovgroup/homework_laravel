@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\ImageController;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
@@ -34,6 +36,8 @@ Route::post('/login', [LoginController::class, 'login'])->name("login.login");
 
 Route::get('/recover', [LoginController::class, 'recover'])->name("login.recover");
 Route::post('/recover_password', [LoginController::class, 'recover_password'])->name("login.recover_password");
+
+Route::post('/image', [imageController::class, 'image'])->withoutMiddleware(VerifyCsrfToken::class);
 
 
 
