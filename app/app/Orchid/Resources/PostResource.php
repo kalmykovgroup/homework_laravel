@@ -29,15 +29,13 @@ class PostResource extends Resource
      * @return array
      */
     public function fields(): array
-    { 
+    {
         return [
             Quill::make('text')->title('Text')->rows(5),
             Select::make('mark')
             ->options(
                array_combine(range(1, 10), range(1, 10))
             )->title('Mark'),
-
-
         ];
     }
 
